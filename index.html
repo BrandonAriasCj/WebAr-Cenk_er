@@ -8,11 +8,10 @@
     type="module"
     src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"
   ></script>
-    <link rel="stylesheet" src="style.css">
+  
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Modelo WebAr</h1>
-    <p>Este es nuestro proyecto que realizamos</p>
     <div class="content-viewer">
         <model-viewer
         src="https://cdn.glitch.global/5f163dda-326d-4026-aa52-f05742d69e44/prueva.glb?v=1706663711721"
@@ -25,5 +24,35 @@
         width='900px' 
       >
     </div>
+    <div id="aboutUs">
+        <img src="./resources/info-icon.png">
+    </div>
+    <div id="commands">
+        <img src="resources/navigation.png">
+    </div>
+
+    <div id="myModal" class="modal">
+
+        <div id="boxContent">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>About Us</h2>
+                <div>
+                    <p>Founded by Industry Veteran Nicolas Kraj, Wonder Goose Studio is a Game Design and UX Design studio providing consulting services and design work for any type of video games: from indie titles to live AAA games or mobile experiences.
+
+                        From conception and design of your core loop and game positioning, through Launch and on to game exploitation, we can help your team at every production stage get the most out of your game.
+                        
+                        Be it core game mechanics, 3Cs, progression systems, players’ motivations, maximizing ARM (acquisition, retention, monetization), UX and game flows, or simply improving game feel, we have over a decade of experience and a proven record of successes behind us.
+                        
+                        Why not drop us a line?
+                        
+                        nicolas@wondergoosestudio.com</p>
+                </div>
+              </div>
+        </div>
+      
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
