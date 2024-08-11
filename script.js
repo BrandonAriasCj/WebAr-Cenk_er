@@ -62,16 +62,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-function esDispositivoMovil() {
-  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-  const esMovilPorUserAgent = /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(userAgent);
-  const esMovilPorTamaño = window.matchMedia('(max-width: 767px)').matches;
+document.addEventListener('DOMContentLoaded', ()=>{
+  function esDispositivoMovil() {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const esMovilPorUserAgent = /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(userAgent);
+    const esMovilPorTamaño = window.matchMedia('(max-width: 767px)').matches;
+    
+    return esMovilPorUserAgent || esMovilPorTamaño;
+  }
   
-  return esMovilPorUserAgent || esMovilPorTamaño;
-}
-
-if (esDispositivoMovil()) {
-  alert("Estas en movil");
-} else {
-  alert("Estas en una computadora");
-}
+  if (esDispositivoMovil()) {
+    const hotspots = document.querySelectorAll('button.annotation');
+    hotspots.forEach(hotspot => {
+      hotspot.style.borderSize = `10px`; // Tamaño ajustado
+    });
+  } else {
+    alert("Estas en una computadora");
+  }
+});
