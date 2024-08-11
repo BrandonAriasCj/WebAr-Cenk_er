@@ -18,7 +18,7 @@ model-viewer {
    margin: 0px 0px;
 }
 
-.annt {
+model-viewer .annt {
     position: absolute;
     background-color: rgba(0, 0, 0, 0);
     color: rgb(21, 25, 222);
@@ -29,7 +29,7 @@ model-viewer {
     border: 20px solid rgba(239, 235, 235, 0.1);
 }
 
-.annt:hover {
+model-viewer .annt:hover {
     position: absolute;
     background-color: rgba(0, 0, 0, 0);
     color: rgb(21, 25, 222);
@@ -141,7 +141,7 @@ img {
     #commands {
         display: none;
     }
-    .annt {
+    model-viewer .annt {
         border: 10px solid rgba(239, 235, 235, 0.1);
     }
 }
