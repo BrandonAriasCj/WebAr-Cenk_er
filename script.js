@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
   const adjustHotspots = () => {
-    const hotspots = document.querySelectorAll('.annotation-wrapper ::slotted(*)');
+    const hotspots = document.querySelectorAll('button.Hotspot');
     const currentZoom = modelViewer.getCameraOrbit().radius;
 
     if (lastZoom !== currentZoom) {
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   }
   
   if (esDispositivoMovil()) {
-    const hotspots = document.querySelectorAll('.annotation-wrapper ::slotted(*)');
+    const hotspots = document.querySelectorAll('button.Hotspot');
     hotspots.forEach(hotspot => {
       hotspot.style.borderSize = `10px`; // Tamaño ajustado
     });

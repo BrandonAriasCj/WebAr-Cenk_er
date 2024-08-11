@@ -29,7 +29,7 @@ model-viewer {
     border: 20px solid rgba(239, 235, 235, 0.1);
 }
 
-.annt:hover {
+.Hotspot:hover {
     position: absolute;
     background-color: rgba(0, 0, 0, 0);
     color: rgb(21, 25, 222);
@@ -141,7 +141,7 @@ img {
     #commands {
         display: none;
     }
-    .annt {
+    .Hotspot {
         border: 10px solid rgba(239, 235, 235, 0.1);
     }
 }
