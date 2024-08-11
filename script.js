@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
   const adjustHotspots = () => {
-    const hotspots = document.querySelectorAll('button.annotation');
+    const hotspots = document.querySelectorAll('.annotation-wrapper');
     const currentZoom = modelViewer.getCameraOrbit().radius;
 
     if (lastZoom !== currentZoom) {
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   }
   
   if (esDispositivoMovil()) {
-    const hotspots = document.querySelectorAll('button.annotation');
+    const hotspots = document.querySelectorAll('.annotation-wrapper');
     hotspots.forEach(hotspot => {
       hotspot.style.borderSize = `10px`; // Tamaño ajustado
     });
@@ -80,3 +80,5 @@ document.addEventListener('DOMContentLoaded', ()=>{
     alert("Estas en una computadora");
   }
 });
+
+//.annotation-wrapper
