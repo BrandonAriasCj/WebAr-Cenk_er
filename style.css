@@ -18,7 +18,7 @@ model-viewer {
    margin: 0px 0px;
 }
 
-.annotation {
+.annt {
     position: absolute;
     background-color: rgba(0, 0, 0, 0);
     color: rgb(21, 25, 222);
@@ -29,7 +29,7 @@ model-viewer {
     border: 20px solid rgba(239, 235, 235, 0.1);
 }
 
-.annotation:hover {
+.annt:hover {
     position: absolute;
     background-color: rgba(0, 0, 0, 0);
     color: rgb(21, 25, 222);
@@ -141,7 +141,7 @@ img {
     #commands {
         display: none;
     }
-    .annotation {
+    .annt {
         border: 10px solid rgba(239, 235, 235, 0.1);
     }
 }
