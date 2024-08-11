@@ -12,9 +12,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- https://cdn.glitch.global/8b6e14c7-6897-4c17-9de9-41a2e82d2d5f/compressed.glb?v=1723335254742 -->
     <div class="content-viewer">
         <model-viewer
-        src="https://cdn.glitch.global/8b6e14c7-6897-4c17-9de9-41a2e82d2d5f/compressed.glb?v=1723335254742"
+        src="./resources/compressed.glb"
         alt="Modelo 3D casita" 
         ar
         ar-modes="webxr scene-viewer quick-look"
@@ -27,8 +28,6 @@
         orbit-sensitivity="1"
 
         >   
-
-        </model-viewer>
                 <!-- Hotspot 1 -->
                 <button id="btnLn" class="annt" slot="hotspot" data-position="4.7m 4.7m 4.3m" data-normal="0m 0m -1m">
                 </button>
@@ -40,6 +39,8 @@
                 <!-- Hotspot 3 -->
                 <button id="btnContact" class="annt" slot="hotspot-3" data-position="4.3m 5.8m 4.3m" data-normal="0m 0m -1m">
                 </button>
+        </model-viewer>
+
     </div>
     <div id="aboutUs">
         <img src="./resources/info-icon.png">
