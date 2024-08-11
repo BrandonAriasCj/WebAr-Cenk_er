@@ -18,7 +18,7 @@ model-viewer {
    margin: 0px 0px;
 }
 
-#modelGlb .annt {
+.Hotspot {
     position: absolute;
     background-color: rgba(0, 0, 0, 0);
     color: rgb(21, 25, 222);
