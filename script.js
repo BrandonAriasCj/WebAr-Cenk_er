@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   if (esDispositivoMovil()) {
     const hotspots = document.querySelectorAll('button.Hotspot');
     hotspots.forEach(hotspot => {
-      hotspot.style.borderSize = `10px`; // Tamaño ajustado
+      hotspot.style.borderSize = `5px`; // Tamaño ajustado
     });
   } else {
     alert("Estas en una computadora");
