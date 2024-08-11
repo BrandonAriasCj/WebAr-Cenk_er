@@ -13,33 +13,22 @@
 </head>
 <body>
     <!-- https://cdn.glitch.global/8b6e14c7-6897-4c17-9de9-41a2e82d2d5f/compressed.glb?v=1723335254742 -->
-    <div class="content-viewer">
-        <model-viewer id="modelGlb"
-        src="./resources/compressed.glb"
-        alt="Modelo 3D casita" 
-        ar
-        ar-modes="webxr scene-viewer quick-look"
-        camera-controls
-        exposure="0.5"
-        camera-orbit="225deg 85deg 27m"
-        camera-target="0m 3m 0m"
-        shadow-intensity="2.0"
-        width="900px" 
-        orbit-sensitivity="1"
-
-        >   
-                <!-- Hotspot 1 -->
-                <button id="btnLn" class="annt" slot="hotspot" data-position="4.7m 4.7m 4.3m" data-normal="0m 0m -1m">
-                </button>
-        
-                <!-- Hotspot 2 -->
-                <button id="btnInsta" class="annt" slot="hotspot-2" data-position="3.5m 4.7m 4.3m" data-normal="0m 0m -1m">
-                </button>
-        
-                <!-- Hotspot 3 -->
-                <button id="btnContact" class="annt" slot="hotspot-3" data-position="4.3m 5.8m 4.3m" data-normal="0m 0m -1m">
-                </button>
-        </model-viewer>
+    <model-viewer src="./resources/compressed.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="2" id="modelGlb" alt="Modelo 3D casita" width="900px" orbit-sensitivity="1" exposure="0.5" camera-target="0m 3m 0m" camera-orbit="225deg 85deg 27m">
+        <button class="Hotspot" slot="hotspot-2" data-position="3.5m 4.7m 4.3m" data-normal="0m 0m -1m" data-visibility-attribute="visible"></button><button class="Hotspot" slot="hotspot-3" data-position="4.3m 5.8m 4.3m" data-normal="0m 0m -1m" data-visibility-attribute="visible"></button>
+        <div class="progress-bar hide" slot="progress-bar">
+            <div class="update-bar"></div>
+        </div>
+        <button slot="ar-button" id="ar-button">
+            <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">
+                    Ver en tu espacio
+                </font>
+            </font>
+        </button>
+        <div id="ar-prompt">
+            <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+        </div>
+    </model-viewer>
 
     </div>
     <div id="aboutUs">
