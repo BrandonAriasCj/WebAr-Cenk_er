@@ -106,6 +106,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
   } else {
     alert("Estas en una computadora");
+    const modelViewer = document.querySelector('model-viewer');
+    modelViewer.setAttribute('camera-orbit', '225deg 75deg 15m');
+
   }
 });
 
