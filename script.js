@@ -100,6 +100,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   }
   
   if (esDispositivoMovil()) {
+    alert("Estas en un mobil");
     const hotspots = document.querySelectorAll('button.Hotspot');
     hotspots.forEach(hotspot => {
       hotspot.style.borderSize = `5px`; // Tamaño ajustado
@@ -147,4 +148,24 @@ document.addEventListener('touchmove', function(event) {
         event.preventDefault();
     }
 }, { passive: false });
+
+
+document.addEventListener("DOMContentLoaded", ()=>{
+  const modelViewer = document.querySelector('#modelGlb');
+
+  // Espera a que el modelo esté completamente cargado
+  modelViewer.addEventListener('load', () => {
+    const animations = modelViewer.availableAnimations;
+    console.log('Available Animations:', animations);
+  });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", ()=>{
+  const modelViewer = document.querySelector('#modelGlb');
+  modelViewer.animationName = "CylinderAction";
+  modelViewer.play();
+});
+
 
