@@ -10,39 +10,27 @@
 </head>
 <body>
     <!-- https://cdn.glitch.global/8b6e14c7-6897-4c17-9de9-41a2e82d2d5f/compressed.glb?v=1723335254742 -->
-    <model-viewer id="modelGlb" 
-    src="https://cdn.glitch.global/8b6e14c7-6897-4c17-9de9-41a2e82d2d5f/compressed.glb?v=1723335254742" 
-    ar ar-modes="webxr scene-viewer quick-look" 
-    camera-controls poster="poster.webp" 
-    shadow-intensity="2" id="modelGlb" 
-    alt="Modelo 3D casita" width="900px" 
-    orbit-sensitivity="1" 
-    exposure="0.5" 
-    camera-target="0m 2.8m 0m" 
-    camera-orbit="225deg 75deg 27m"
-    autoplay 
-     animation-name="CylinderAction" 
-     alt="A 3D model with animations"
-    >
-  
-        <button  class="Hotspot btnContact" slot="hotspot-1" data-position="4.9m 5.8m 4.5m" data-normal="0m 0m -1m"></button>
-        <button  class="Hotspot btnContact" slot="hotspot-2" data-position="3.8m 5.8m 4.5m" data-normal="0m 0m -1m"></button>
-        <button id="btnLn" class="Hotspot" slot="hotspot-3" data-position="4.9m 4.7m 4.5m" data-normal="0m 0m -1m"></button>
-        <button id="btnInsta" class="Hotspot" slot="hotspot-4" data-position="3.7m 4.7m 4.5m" data-normal="0m 0m -1m"></button>
-        <button id="square1" class="Hotspot" slot="hotspot-5" data-position="2m 5.3m 4.3m" data-normal="0m 0m -1m"></button>
-        <button id="square2" class="Hotspot" slot="hotspot-6" data-position="-0.3m 5.3m 4.3m" data-normal="0m 0m -1m"></button>
-        <button id="square3" class="Hotspot" slot="hotspot-7" data-position="-2.5m 5.3m 4.3m" data-normal="0m 0m -1m"></button>
-        <button id="square4" class="Hotspot" slot="hotspot-8" data-position="2m 2.5m 4.4m" data-normal="0m 0m -1m"></button>
-        <button id="square5" class="Hotspot" slot="hotspot-9" data-position="-0.3m 2.5m 4.3m" data-normal="0m 0m -1m"></button>
-        <button id="square6" class="Hotspot" slot="hotspot-10" data-position="-2.5m 2.5m 4.3m" data-normal="0m 0m -1m"></button>
-
+    <model-viewer src="https://cdn.glitch.global/8b6e14c7-6897-4c17-9de9-41a2e82d2d5f/compressed.glb?v=1723335254742" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="2" id="modelGlb" alt="Modelo 3D casita" width="900px" orbit-sensitivity="1" autoplay exposure="0.5" camera-target="0m 2.8m 0m" camera-orbit="225deg 75deg 27m" animation-name="Circle.004Action">
+        <button id="btnContact" class="Hotspot" slot="hotspot-4" data-surface="2 0 699 701 700 0.413 0.561 0.026" data-visibility-attribute="visible"></button>
+        <button id="btnLn" class="Hotspot" slot="hotspot-5" data-surface="2 0 345 347 346 0.100 0.801 0.099" data-visibility-attribute="visible"></button>
+        <button id="btnInsta" class="Hotspot" slot="hotspot-6" data-surface="2 0 261 263 262 0.120 0.797 0.083" data-visibility-attribute="visible"></button>
+        <button id="square1" class="Hotspot" slot="hotspot-8" data-surface="2 0 478 479 480 0.439 0.257 0.304" data-visibility-attribute="visible"></button>
+        <button id="square2" class="Hotspot" slot="hotspot-9" data-surface="2 0 256 257 258 0.509 0.218 0.272" data-visibility-attribute="visible"></button>
+        <button id="square3" class="Hotspot" slot="hotspot-11" data-surface="2 0 204 205 206 0.435 0.231 0.334" data-visibility-attribute="visible"></button>
+        <button id="square4" class="Hotspot" slot="hotspot-13" data-surface="2 0 152 153 154 0.362 0.251 0.388" data-visibility-attribute="visible"></button>
+        <button id="square5" class="Hotspot" slot="hotspot-14" data-surface="2 0 100 101 102 0.407 0.247 0.347" data-visibility-attribute="visible"></button>
+        <button id="square6" class="Hotspot" slot="hotspot-15" data-surface="2 0 48 49 50 0.283 0.301 0.450" data-visibility-attribute="visible"></button>
         <div class="progress-bar hide" slot="progress-bar">
             <div class="update-bar"></div>
         </div>
-
+        <button slot="ar-button" id="ar-button">
+            View in your space
+        </button>
+        <div id="ar-prompt">
+        </div>
     </model-viewer>
+    
 
-    </div>
     <div id="aboutUs">
         <img src="./resources/info-icon.png">
     </div>

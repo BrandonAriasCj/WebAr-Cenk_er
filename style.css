@@ -32,7 +32,7 @@ model-viewer {
     padding: 0px;
     cursor: pointer;
     font-family: Arial, sans-serif;
-    border: 20px solid rgba(70, 67, 67, 0.5);
+    border: 20px solid rgba(239, 235, 235, 0.5);
     
 }
 /* border: 20px solid rgba(239, 235, 235, 0.5); */
@@ -46,7 +46,7 @@ model-viewer {
     padding: 0px;
     cursor: pointer;
     font-family: Arial, sans-serif;
-    border: 20px solid rgba(239, 235, 235, 0.3);
+    border: 20px solid rgba(239, 235, 235, 0.7);
 }
 
 
@@ -151,6 +151,6 @@ img {
         display: none;
     }
     .Hotspot {
-        border: 10px solid rgba(239, 235, 235, 0.1);
+        border: 15px solid rgba(239, 235, 235, 0.5);
     }
 }

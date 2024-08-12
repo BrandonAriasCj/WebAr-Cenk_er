@@ -21,7 +21,7 @@ window.onclick = function(event) {
 document.addEventListener('DOMContentLoaded', () => {
   var btnLn = document.getElementById("btnLn");
 var btnInsta = document.getElementById("btnInsta");
-var btnsContact = document.querySelectorAll(".btnContact");
+var btnsContact = document.getElementById("btnContact");
 var square1 = document.getElementById("square1");
 var square2 = document.getElementById("square2");
 var square3 = document.getElementById("square3");
@@ -34,9 +34,9 @@ btnLn.onclick = function() {
 btnInsta.onclick = function() {
   window.open("https://www.instagram.com/ajansfabula?igsh=MWwyZ3E2YmowcnQyaQ%3D%3D&utm_source=qr", "_blank");
 }
-btnsContact.forEach((btn)=>{btn.onclick = function(){
-  alert("form building");
-}});
+btnsContact.onclick = function() {
+  alert("contacto");
+}
 
 
 square1.onclick = function(){
@@ -60,35 +60,6 @@ square6.onclick = function(){
 
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const modelViewer = document.querySelector('model-viewer');
-  
-  let lastZoom = modelViewer.getCameraOrbit().radius;
-  
-
-  const adjustHotspots = () => {
-    const hotspots = document.querySelectorAll('button.Hotspot');
-    const currentZoom = modelViewer.getCameraOrbit().radius;
-
-    if (lastZoom !== currentZoom) {
-      const scaleFactor = 26 - currentZoom;
-      hotspots.forEach(hotspot => {
-        hotspot.style.width = `${1.3 * scaleFactor}em`; // Tamaño ajustado
-        hotspot.style.height = `${1.3 * scaleFactor}em`; // Tamaño ajustado
-      });
-      lastZoom = currentZoom;
-    }
-  };
-
-  // Usar un bucle de actualización para ajustar los hotspots
-  const updateLoop = () => {
-    adjustHotspots();
-    requestAnimationFrame(updateLoop);
-  };
-
-  updateLoop();
-});
-
 
 document.addEventListener('DOMContentLoaded', ()=>{
   function esDispositivoMovil() {
@@ -101,9 +72,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
   
   if (esDispositivoMovil()) {
     alert("Estas en un mobil");
-    const hotspots = document.querySelectorAll('button.Hotspot');
+    const hotspots = document.querySelectorAll('.Hotspot');
     hotspots.forEach(hotspot => {
-      hotspot.style.borderSize = `5px`; // Tamaño ajustado
+      hotspot.style.borderWidth = `10px`; // Tamaño ajustado
+      console.log(hotspot);
     });
   } else {
     alert("Estas en una computadora");
@@ -164,8 +136,23 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 document.addEventListener("DOMContentLoaded", ()=>{
   const modelViewer = document.querySelector('#modelGlb');
-  modelViewer.animationName = "CylinderAction";
-  modelViewer.play();
+  let animationIndex = 0;
+
+  // Espera a que el modelo esté completamente cargado
+  modelViewer.addEventListener('load', () => {
+    const animations = modelViewer.availableAnimations;
+
+    if (animations.length > 0) {
+      // Cambiar la animación cada 10 segundos
+      setInterval(() => {
+        animationIndex = (animationIndex + 1) % animations.length;
+        modelViewer.animationName = animations[animationIndex];
+        modelViewer.play();
+      }, 10000); // 10000ms = 10 segundos
+    } else {
+      console.log('No hay animaciones disponibles en el modelo.');
+    }
+  });
 });
 
 
