@@ -18,19 +18,47 @@ window.onclick = function(event) {
 
 
 
-var btnLn = document.getElementById("btnLn");
+document.addEventListener('DOMContentLoaded', () => {
+  var btnLn = document.getElementById("btnLn");
 var btnInsta = document.getElementById("btnInsta");
-var btnContact = document.getElementById("btnContact");
+var btnsContact = document.querySelectorAll(".btnContact");
+var square1 = document.getElementById("square1");
+var square2 = document.getElementById("square2");
+var square3 = document.getElementById("square3");
+var square4 = document.getElementById("square4");
+var square5 = document.getElementById("square5");
+var square6 = document.getElementById("square6");
 btnLn.onclick = function() {
-  window.location.assign("https://www.linkedin.com/company/fabula-kreatif/");
+  window.open("https://www.linkedin.com/company/fabula-kreatif/", "_blank");
 }
 btnInsta.onclick = function() {
-  window.location.assign("https://www.instagram.com/ajansfabula?igsh=MWwyZ3E2YmowcnQyaQ%3D%3D&utm_source=qr");
+  window.open("https://www.instagram.com/ajansfabula?igsh=MWwyZ3E2YmowcnQyaQ%3D%3D&utm_source=qr", "_blank");
 }
-btnContact.onclick = function() {
-  alert("Contact form building");
+btnsContact.forEach((btn)=>{btn.onclick = function(){
+  alert("form building");
+}});
+
+
+square1.onclick = function(){
+  window.open("https://www.anasigorta.com.tr","_blank");
+}
+square2.onclick = function(){
+  window.open("https://www.fenerbahce.org","_blank");
+}
+square3.onclick = function(){
+  window.open("https://www.camework.com","_blank");
+}
+square4.onclick = function(){
+  window.open("https://www.maxithings.com","_blank");
+}
+square5.onclick = function(){
+  window.open("https://www.mentasigorta.com","_blank");
+}
+square6.onclick = function(){
+  window.open("https://www.tebom.net","_blank");
 }
 
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   const modelViewer = document.querySelector('model-viewer');
@@ -82,3 +110,38 @@ document.addEventListener('DOMContentLoaded', ()=>{
 });
 
 //button.annotation
+
+document.querySelector('#modelGlb').addEventListener('error', function(event) {
+  console.log('Error loading the 3D model, switching to the alternative model.');
+  this.src = 'https://cdn.glitch.global/8b6e14c7-6897-4c17-9de9-41a2e82d2d5f/compressed.glb?v=1723335254742'; // Enlace alternativo
+});
+
+
+
+
+const allowedElement = document.getElementById('modelGlb');
+
+function isInsideAllowedElement(event) {
+    return event.target === allowedElement;
+}
+
+document.addEventListener('wheel', function(event) {
+    if (event.ctrlKey && !isInsideAllowedElement(event)) {
+        event.preventDefault();
+    }
+}, { passive: false });
+
+document.addEventListener('keydown', function(event) {
+    if ((event.ctrlKey && (event.key === '+' || event.key === '-')) || event.key === 'Meta') {
+        if (!isInsideAllowedElement(event)) {
+            event.preventDefault();
+        }
+    }
+});
+
+document.addEventListener('touchmove', function(event) {
+    if (event.scale !== 1 && !isInsideAllowedElement(event)) {
+        event.preventDefault();
+    }
+}, { passive: false });
+
