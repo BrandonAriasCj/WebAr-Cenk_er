@@ -176,3 +176,35 @@ document.addEventListener("DOMContentLoaded", ()=>{
 });
 
 
+
+
+
+/* ajax */
+
+
+document.addEventListener("DOMContentLoaded", ()=>{
+
+  document.getElementById("contactForm").addEventListener("submit", function(event){
+    event.preventDefault(); // Evita que el formulario se envíe de la forma tradicional
+
+    // Crear un objeto FormData con los datos del formulario
+    var formData = new FormData(this);
+
+    // Enviar los datos a través de AJAX
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "./php/mail.php", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Parsear la respuesta JSON
+            var response = JSON.parse(xhr.responseText);
+
+            // Mostrar la respuesta como una alerta
+            alert(response.message);
+        }
+    };
+    xhr.send(formData);
+});
+
+
+});
+
