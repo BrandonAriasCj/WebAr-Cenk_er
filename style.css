@@ -91,24 +91,55 @@ img {
 .boxContent {
     width: 100%;
     height: 100%;
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0px;
 }
-.modal-content {
+
+#ModalAboutUs .modal-content {
+    flex-direction: column;
     color: white;
     background: hsla(241,18%,47%,.5);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-
     border: 1px solid #ffffff2e;
     padding: 20px;
     max-width: 350px;
-    height: 50%;
+
     border-radius: 7px;
     margin: 0px 20px 0px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
+
+#ModalContact .modal-content {
+    color: white;
+    background: hsla(241,18%,47%,.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid #ffffff2e;
+    padding: 20px;
+    max-width: 350px;
+
+    border-radius: 7px;
+    margin: 0px 20px 0px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+
+
 .modal-content div {
     height: 80%;
     overflow-y: none;
@@ -153,4 +184,56 @@ img {
     .Hotspot {
         border: 15px solid rgba(239, 235, 235, 0.5);
     }
+}
+
+
+
+
+#ModalContact form h2{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+input, textarea { 
+    color:white;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 93%;
+    padding: 5px 10px;
+}
+
+input {
+    height: 30px;
+}
+
+#buttonsForm {
+    width: 98%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input#submit, input#reset {
+    height: 40px;
+    width: 40%;
+    padding: 10px 5px;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
+    color: rgb(251, 248, 248);
+}
+
+input:focus, textarea:focus {
+    outline: 2px solid rgb(82, 82, 230); /* Cambia el color del borde de activación */
+    outline-offset: 2px;    /* Opcional: añade un espacio entre el borde y el outline */
+}
+
+/* Cambiar el color del borde cuando el botón es activado (clicked) */
+input:active, textarea:focus{
+    outline: 2px solid rgb(82, 82, 230); /* Cambia el color del borde cuando es activado */
 }

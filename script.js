@@ -1,27 +1,49 @@
-var modal = document.getElementById("myModal");
-var boxContent = document.getElementById("boxContent");
-var btn = document.getElementById("aboutUs");
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+document.addEventListener("DOMContentLoaded", ()=>{
+    var modal1 = document.getElementById("ModalAboutUs");
+    var boxContent1 = document.getElementById("boxAboutUs");
+    var btn1 = document.getElementById("aboutUs");
+    var span1 = document.getElementsByClassName("close")[0];
+    btn1.onclick = function() {
+      modal1.style.display = "block";
+    }
 
-span.onclick = function() {
-  modal.style.display = "none";
-}
+    span1.onclick = function() {
+      modal1.style.display = "none";
+    }
 
-window.onclick = function(event) {
-  if (event.target == boxContent) {
-    modal.style.display = "none";
-  }
-}
+
+
+    var modal2 = document.getElementById("ModalContact");
+    var boxContent2 = document.getElementById("boxContact");
+    var btn2 = document.getElementById("btnContact");
+    var span2 = document.getElementsByClassName("close")[1];
+    btn2.onclick = function() {
+      modal2.style.display = "block";
+    }
+
+    span2.onclick = function() {
+      modal2.style.display = "none";
+    }
+
+
+    window.onclick = function(event) {
+      if (event.target == boxContent1) {
+        modal1.style.display = "none";
+        console.log("condicion cumplida para modal1");
+      }
+  
+      if (event.target == boxContent2) {
+        modal2.style.display = "none";
+        console.log("condicion cumplida para modal2");
+      }
+    }
+});
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
   var btnLn = document.getElementById("btnLn");
 var btnInsta = document.getElementById("btnInsta");
-var btnsContact = document.getElementById("btnContact");
 var square1 = document.getElementById("square1");
 var square2 = document.getElementById("square2");
 var square3 = document.getElementById("square3");
@@ -34,9 +56,7 @@ btnLn.onclick = function() {
 btnInsta.onclick = function() {
   window.open("https://www.instagram.com/ajansfabula?igsh=MWwyZ3E2YmowcnQyaQ%3D%3D&utm_source=qr", "_blank");
 }
-btnsContact.onclick = function() {
-  alert("contacto");
-}
+
 
 
 square1.onclick = function(){

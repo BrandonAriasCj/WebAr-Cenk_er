@@ -46,12 +46,12 @@
         </div>
     </div>
 
-    <div id="myModal" class="modal">
+    <div id="ModalAboutUs" class="modal">
 
-        <div class="boxContent">
+        <div id="boxAboutUs" class="boxContent">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <h2>About Us</h2>
+                <h2>Hakkımızda</h2>
                 <div>                    
                     <h3>Ajans Fabula</h3>
                     <p>Amacımız net. Markaların hedeflerine dumanı üstünde yeni dijital yaratıcı fikirler gerçekleştirmek.</p>
@@ -60,31 +60,31 @@
                 </div>
             </div>
         </div>
+    
+    </div>
 
-        <div class="boxContent">
+    <div id="ModalContact" class="modal">
+        <div id="boxContact" class="boxContent">
             <div class="modal-content">
-                <form action="URL_A_DONDE_ENVIAR_DATOS" method="POST">
-                    <!-- Campo de texto para el nombre completo -->
-                    <input type="text" id="full-name" name="full-name"  required><br><br>
+                <span class="close">&times;</span>
+                <form action="./php/mail.php" method="POST">
+                    <h2>İletişim</h2>
+                    <input type="text" id="full-name" name="full-name" placeholder="Adınız Soyadınız" required><br><br>
             
-                    <!-- Campo de correo electrónico -->
-                    <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email" required><br><br>
+                    <input type="email" id="email" name="email" placeholder="Email" required><br><br>
             
-                    <!-- Área de texto para el mensaje -->
-                    <label for="message">Your Message:</label><br>
-                    <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+                    <textarea id="message" name="message" rows="10" cols="50" placeholder="Mesajınız" required></textarea><br><br>
             
-                    <!-- Botón de envío -->
-                    <input type="submit" value="Enviar">
+                    <div id="buttonsForm">
+                        <input id="submit" type="submit" value="GÖNDER">
             
-                    <!-- Botón para resetear el formulario -->
-                    <input type="reset" value="Restablecer">
+                        <input id="reset" type="reset" value="SIFIRLA">
+                    </div>
                 </form>
             </div>
         </div>
-      
     </div>
+
 
     <script src="script.js"></script>
 </body>
