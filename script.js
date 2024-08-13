@@ -203,6 +203,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             
             // Si el envío fue exitoso, limpiar los campos del formulario
             if (response.status === 'success') {
+                console.log("reconoce el success")
                 document.getElementById("contactForm").reset(); // Limpia el formulario
             }
         }
