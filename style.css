@@ -1,6 +1,6 @@
 html, body {
-    touch-action: manipulation; /* Previene el zoom de pellizco */
-    -ms-touch-action: manipulation; /* Previene el zoom de pellizco en IE */
+    touch-action: manipulation; 
+    -ms-touch-action: manipulation; 
 }
 
 
@@ -12,11 +12,46 @@ body {
     margin: 0px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 model-viewer {
     width: 100%;
     height: 100%;
     margin: 0px;
+    animation: fadeIn 10s ease-in-out forwards;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5); 
+    }
+    to {
+        opacity: 1;
+        transform: scale(1); 
+    }
+}
+
+
+.accessory {
+    opacity: 0;
+    transition: opacity 5s ease-in-out; 
+}
+
+
+.accessory.show {
+    opacity: 1;
+}
+
+#default-ar-button {
+    opacity: 0;
+    transition: opacity 5s ease-in-out;
+}
+
+#default-ar-button {
+    position: none;
+}
+
+
 .content-viewer {
     width: 100%;
     height: 100%;
@@ -35,8 +70,7 @@ model-viewer {
     border: 20px solid rgba(239, 235, 235, 0.5);
     
 }
-/* border: 20px solid rgba(239, 235, 235, 0.5); */
-/* border in 0.1  */
+
 
 .Hotspot:hover {
     position: absolute;
@@ -58,15 +92,16 @@ img {
 }
 
 #aboutUs {
-    display: fixed;
-    position: absolute;
+    display: block;
+    position: fixed;
     top: 30px;
     left: 30px;
     width: 50px;
 }
 
 #commands {
-    display: fixed;
+    display: block;
+    position: fixed;
     position: absolute;
     bottom: 30px;
     left: 40px;
@@ -77,14 +112,14 @@ img {
 
 
 .modal {
-    display: none; /* Oculto por defecto */
-    position: fixed; /* Mantiene el modal en la misma posición en la pantalla */
-    z-index: 1; /* Coloca el modal sobre otros elementos */
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
     left: 0;
     top: 0;
-    width: 100vw; /* Ancho completo */
-    height: 100%; /* Altura completa */
-    overflow: auto; /* Permite desplazamiento si el contenido del modal es grande */
+    width: 100vw; 
+    height: 100%; 
+    overflow: auto;
 }
 
 
@@ -229,11 +264,10 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
 }
 
 input:focus, textarea:focus {
-    outline: 2px solid rgb(82, 82, 230); /* Cambia el color del borde de activación */
-    outline-offset: 2px;    /* Opcional: añade un espacio entre el borde y el outline */
+    outline: 2px solid rgb(82, 82, 230); 
+    outline-offset: 2px;    
 }
 
-/* Cambiar el color del borde cuando el botón es activado (clicked) */
 input:active, textarea:focus{
-    outline: 2px solid rgb(82, 82, 230); /* Cambia el color del borde cuando es activado */
+    outline: 2px solid rgb(82, 82, 230); 
 }

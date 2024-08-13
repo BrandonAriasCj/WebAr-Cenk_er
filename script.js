@@ -29,12 +29,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
     window.onclick = function(event) {
       if (event.target == boxContent1) {
         modal1.style.display = "none";
-        console.log("condicion cumplida para modal1");
       }
   
       if (event.target == boxContent2) {
         modal2.style.display = "none";
-        console.log("condicion cumplida para modal2");
       }
     }
 });
@@ -91,25 +89,37 @@ document.addEventListener('DOMContentLoaded', ()=>{
   }
   
   if (esDispositivoMovil()) {
-    alert("Estas en un mobil");
     const hotspots = document.querySelectorAll('.Hotspot');
     hotspots.forEach(hotspot => {
-      hotspot.style.borderWidth = `10px`; // Tamaño ajustado
-      console.log(hotspot);
+      hotspot.style.borderWidth = `10px`; 
     });
+    const commands = document.getElementById("commands");
+    commands.style.display = 'none';
   } else {
-    alert("Estas en una computadora");
     const modelViewer = document.querySelector('model-viewer');
     modelViewer.setAttribute('camera-orbit', '225deg 75deg 15m');
 
   }
 });
 
-//button.annotation
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const accessories = document.querySelectorAll('.accessory');
+
+  accessories.forEach((element, index) => {
+      setTimeout(() => {
+          element.classList.add('show');
+      }, index * 3000); 
+  });
+});
+
+
+
 
 document.querySelector('#modelGlb').addEventListener('error', function(event) {
   console.log('Error loading the 3D model, switching to the alternative model.');
-  this.src = 'https://cdn.glitch.global/8b6e14c7-6897-4c17-9de9-41a2e82d2d5f/compressed.glb?v=1723335254742'; // Enlace alternativo
+  this.src = './resources/compressed.glb'; 
 });
 
 
@@ -142,33 +152,21 @@ document.addEventListener('touchmove', function(event) {
 }, { passive: false });
 
 
-document.addEventListener("DOMContentLoaded", ()=>{
-  const modelViewer = document.querySelector('#modelGlb');
-
-  // Espera a que el modelo esté completamente cargado
-  modelViewer.addEventListener('load', () => {
-    const animations = modelViewer.availableAnimations;
-    console.log('Available Animations:', animations);
-  });
-});
-
-
 
 document.addEventListener("DOMContentLoaded", ()=>{
   const modelViewer = document.querySelector('#modelGlb');
   let animationIndex = 0;
 
-  // Espera a que el modelo esté completamente cargado
+  
   modelViewer.addEventListener('load', () => {
     const animations = modelViewer.availableAnimations;
 
     if (animations.length > 0) {
-      // Cambiar la animación cada 10 segundos
       setInterval(() => {
         animationIndex = (animationIndex + 1) % animations.length;
         modelViewer.animationName = animations[animationIndex];
         modelViewer.play();
-      }, 10000); // 10000ms = 10 segundos
+      }, 10000); 
     } else {
       console.log('No hay animaciones disponibles en el modelo.');
     }
@@ -185,28 +183,18 @@ document.addEventListener("DOMContentLoaded", ()=>{
 document.addEventListener("DOMContentLoaded", ()=>{
 
   document.getElementById("contactForm").addEventListener("submit", function(event){
-    event.preventDefault(); // Evita que el formulario se envíe de la forma tradicional
+    event.preventDefault(); 
 
-    // Crear un objeto FormData con los datos del formulario
     var formData = new FormData(this);
 
-    // Enviar los datos a través de AJAX
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "./php/mail.php", true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            // Parsear la respuesta JSON
             var response = JSON.parse(xhr.responseText);
-            console.log(response);
-            // Mostrar la respuesta como una alerta
             alert(response.message);
             
-            // Si el envío fue exitoso, limpiar los campos del formulario
-            if (response.status === 'success') {  
-                console.log("reconoce el success")
-                document.querySelector("#contactForm").reset();
-                
-            }
+
         }
     };
     xhr.send(formData);

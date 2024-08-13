@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- https://cdn.glitch.global/8b6e14c7-6897-4c17-9de9-41a2e82d2d5f/compressed.glb?v=1723335254742 -->
-    <model-viewer src="https://cdn.glitch.global/8b6e14c7-6897-4c17-9de9-41a2e82d2d5f/compressed.glb?v=1723335254742" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.webp" shadow-intensity="2" id="modelGlb" alt="Modelo 3D casita" width="900px" orbit-sensitivity="1" autoplay exposure="0.5" camera-target="0m 2.8m 0m" camera-orbit="225deg 75deg 27m" animation-name="Circle.004Action">
+    <model-viewer src="https://cdn.glitch.global/8b6e14c7-6897-4c17-9de9-41a2e82d2d5f/compressed.glb?v=1723335254742" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="./resources/poster.webp" shadow-intensity="2" id="modelGlb" alt="Modelo 3D casita" width="900px" orbit-sensitivity="1" autoplay exposure="0.5" camera-target="0m 2.8m 0m" camera-orbit="225deg 75deg 27m" animation-name="Circle.004Action">
         <button id="btnContact" class="Hotspot" slot="hotspot-4" data-surface="2 0 699 701 700 0.413 0.561 0.026" data-visibility-attribute="visible"></button>
         <button id="btnLn" class="Hotspot" slot="hotspot-5" data-surface="2 0 345 347 346 0.100 0.801 0.099" data-visibility-attribute="visible"></button>
         <button id="btnInsta" class="Hotspot" slot="hotspot-6" data-surface="2 0 261 263 262 0.120 0.797 0.083" data-visibility-attribute="visible"></button>
@@ -23,18 +23,13 @@
         <div class="progress-bar hide" slot="progress-bar">
             <div class="update-bar"></div>
         </div>
-        <button slot="ar-button" id="ar-button">
-            View in your space
-        </button>
-        <div id="ar-prompt">
-        </div>
     </model-viewer>
     
 
-    <div id="aboutUs">
+    <div id="aboutUs" class="accessory">
         <img src="./resources/info-icon.png">
     </div>
-    <div id="commands">
+    <div id="commands" class="accessory">
         <img src="resources/navigation.png">
     </div>
 
