@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         if (xhr.readyState === 4 && xhr.status === 200) {
             // Parsear la respuesta JSON
             var response = JSON.parse(xhr.responseText);
-
+            console.log(response);
             // Mostrar la respuesta como una alerta
             alert(response.message);
             
