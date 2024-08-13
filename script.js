@@ -200,6 +200,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
             // Mostrar la respuesta como una alerta
             alert(response.message);
+            
+            // Si el envío fue exitoso, limpiar los campos del formulario
+            if (response.status === 'success') {
+                document.getElementById("contactForm").reset(); // Limpia el formulario
+            }
         }
     };
     xhr.send(formData);
