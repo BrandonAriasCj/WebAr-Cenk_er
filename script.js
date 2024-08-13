@@ -202,9 +202,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
             alert(response.message);
             
             // Si el envío fue exitoso, limpiar los campos del formulario
-            if (response.status === 'success') {
+            if (response.status === 'success') {  
                 console.log("reconoce el success")
-                document.getElementById("contactForm").reset(); // Limpia el formulario
+                document.querySelector("#contactForm").reset();
+                
             }
         }
     };
